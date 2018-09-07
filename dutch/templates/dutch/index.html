@@ -1,0 +1,157 @@
+{% extends 'dutch/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div>
+        <!-- 轮播图 -->
+        <div class="slide-box">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}">
+                    </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="block">
+                <a href="{% url 'dutch:detail' %}">
+                    <div class="block-img">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="block-info">
+                        <div class="row">
+                            <div class="col-6 block-left text-left">
+                                <p class="info-title">加州语文课程</p>
+                                <p>
+                                    <span class="info-age">10-12岁</span>
+                                    <span class="info-scale">3人班</span>
+                                </p>
+                                <p class="info-address"><span class="fa-anchor">&nbsp;</span>广东 广州市 番禺区</p>
+                            </div>
+                            <div class="col-6 block-right text-right">
+                                <p class="info-date">2018-04-30</p>
+                                <p class="info-remain">仅剩3人</p>
+                                <p class="info-user"><span class="fa-user">&nbsp;</span>发起人：朱远鹏</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="block">
+                <a href="{% url 'dutch:detail' %}">
+                    <div class="block-img">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="block-info">
+                        <div class="row">
+                            <div class="col-6 block-left text-left">
+                                <p class="info-title">加州语文课程</p>
+                                <p>
+                                    <span class="info-age">10-12岁</span>
+                                    <span class="info-scale">3人班</span>
+                                </p>
+                                <p class="info-address"><span class="fa-anchor">&nbsp;</span>广东 广州市 番禺区</p>
+                            </div>
+                            <div class="col-6 block-right text-right">
+                                <p class="info-date">2018-04-30</p>
+                                <p class="info-remain">仅剩3人</p>
+                                <p class="info-user"><span class="fa-user">&nbsp;</span>发起人：朱远鹏</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="block">
+                <a href="{% url 'dutch:detail' %}">
+                    <div class="block-img">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="block-info">
+                        <div class="row">
+                            <div class="col-6 block-left text-left">
+                                <p class="info-title">加州语文课程</p>
+                                <p>
+                                    <span class="info-age">10-12岁</span>
+                                    <span class="info-scale">3人班</span>
+                                </p>
+                                <p class="info-address"><span class="fa-anchor">&nbsp;</span>广东 广州市 番禺区</p>
+                            </div>
+                            <div class="col-6 block-right text-right">
+                                <p class="info-date">2018-04-30</p>
+                                <p class="info-remain">仅剩3人</p>
+                                <p class="info-user"><span class="fa-user">&nbsp;</span>发起人：朱远鹏</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="block">
+                <a href="{% url 'dutch:detail' %}">
+                    <div class="block-img">
+                        <img src="{% static 'dutch/imgs/2.jpg' %}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="block-info">
+                        <div class="row">
+                            <div class="col-6 block-left text-left">
+                                <p class="info-title">加州语文课程</p>
+                                <p>
+                                    <span class="info-age">10-12岁</span>
+                                    <span class="info-scale">3人班</span>
+                                </p>
+                                <p class="info-address"><span class="fa-anchor">&nbsp;</span>广东 广州市 番禺区</p>
+                            </div>
+                            <div class="col-6 block-right text-right">
+                                <p class="info-date">2018-04-30</p>
+                                <p class="info-remain">仅剩3人</p>
+                                <p class="info-user"><span class="fa-user">&nbsp;</span>发起人：朱远鹏</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

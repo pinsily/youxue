@@ -1,0 +1,37 @@
+{% extends 'dutch/base.html' %}
+{% load static %}
+
+{% block nav-left %}返回{% endblock %}
+{% block nav-center %}拼班详情{% endblock %}
+
+{% block content %}
+
+    <div>
+
+        <div class="block-img">
+            <img src="{% static 'dutch/imgs/2.jpg' %}" alt="" style="width: 100%;">
+        </div>
+        <div class="block-info">
+            <div class="row">
+                <div class="col-6 block-left text-left">
+                    <p class="info-title">课程名称：加州语文课程</p>
+                    <p style="font-size: 14px; color: lightgrey; margin: 0 0 10px;">开课时间：2018-04-30 (星期一)</p>
+                    <p>
+                        <span class="info-span">10-12岁</span>
+                        <span class="info-span">3人班</span>
+                    </p>
+
+                </div>
+                <div class="col-6 block-right text-right">
+                    <p class="info-date">&nbsp;</p>
+                    <p><span class="info-span">仅剩3人</span></p>
+                    <p class="info-user"><span class="fa-user">&nbsp;</span>发起人：朱远鹏</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
