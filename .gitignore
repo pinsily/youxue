@@ -8,5 +8,4 @@ dist
 build
 
 dutch/migrations
-static/
 youxue/settings.py

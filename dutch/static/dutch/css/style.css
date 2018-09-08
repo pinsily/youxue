@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    /*background: url("../imgs/2.jpg") no-repeat;*/
+    background-size: 100% 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.body-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border: 1px #9e9e9e solid;
+
+}
+
+.header-nav {
+    width: 100%;
+}
+
+. nav-title {
+    padding: 5px;
+    text-align: justify;
+}
+
+.nav-center {
+    padding: 5px;
+    font-size: 18px;
+    color: rgb(132,134,130);
+
+}
+
+.nav-right {
+    padding: 5px;
+    font-size: 14px;
+    color: rgb(132,134,130);
+}
+
+.navbar {
+    padding: 0;
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+.block {
+    padding: 10px;
+    font-style: normal;
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(130,132,134);
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.block img {
+    border-radius: 10px;
+}
+
+.info-title {
+    font-size: 18px;
+    margin: 10px 0 20px 0;
+}
+
+.info-date {
+    font-size: 18px;
+    margin: 10px 0 20px 0;
+}
+
+.info-age {
+    border: 1px orangered solid;
+    font-size: 14px;
+    color: orangered;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.info-scale {
+    border: 1px lawngreen solid;
+    font-size: 14px;
+    color: lawngreen;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.info-span {
+    border: 1px lawngreen solid;
+    font-size: 14px;
+    color: lawngreen;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.info-remain {
+    color: orangered;
+}
+
+.info-user, .info-address {
+    margin: 5px 0 10px 0;
+}
+
+/*
+
+.fixed-top {
+    left: initial;
+    right: initial;
+    background-color: #9e9e9e;
+}*/
