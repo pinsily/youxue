@@ -26,4 +26,4 @@ def wechat_main(request):
         else:
             return HttpResponse("field")
 
-    return None
+    return HttpResponse("hello")
