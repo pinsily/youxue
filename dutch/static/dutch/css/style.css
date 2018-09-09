@@ -13,7 +13,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     background-color: aliceblue;
-    border: 1px #9e9e9e solid;
+    /*border: 1px #9e9e9e solid;*/
 
 }
 
@@ -40,8 +40,29 @@ body {
 }
 
 .navbar {
-    padding: 0;
+    padding: 5px;
+    background-color: rgb(33, 170, 252);
 }
+
+.address-brand{
+    background-image: url("../imgs/address.png");
+    width: 16px;
+    height: 18px;
+}
+
+.navbar .form-group {
+    margin-bottom: 0;
+}
+
+.search-box {
+    padding: 2px;
+    font-size: 14px;
+    margin-top: 4px;
+    border-radius: .25rem;
+}
+
+
+
 
 .slide-box img {
     width: 100%;
@@ -50,6 +71,10 @@ body {
 .block {
     padding: 10px;
     font-style: normal;
+    box-shadow: 3px 3px 3px #F0FFFF;
+    background-color: #ffffff;
+    border: #cce5ff;
+    margin: 8px 0 0 0;
 
 }
 
@@ -70,8 +95,30 @@ a:active {
     text-decoration: none;
 }
 
+
+.index-title{
+    font-size: 18px;
+    font-style: normal;
+    margin: 5px 0 10px 5px;
+}
+
+.index-con {
+    border-bottom: 1px solid #9e9e9e;
+
+}
+
+
 .block img {
-    border-radius: 10px;
+    width: 100%;
+    /*border-radius: 50%;*/
+}
+
+.info-image{
+    border-radius: 4px;
+}
+
+.info-eval{
+    padding-top: 10px;
 }
 
 .info-title {
@@ -85,19 +132,25 @@ a:active {
 }
 
 .info-age {
-    border: 1px orangered solid;
-    font-size: 14px;
-    color: orangered;
-    padding: 5px 8px;
+    font-size: 8px;
+    color: white;
+    padding: 3px 8px;
     border-radius: 5px;
+    background-color: rgb(63,207,196);
+}
+
+.info-user{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
 }
 
 .info-scale {
-    border: 1px lawngreen solid;
-    font-size: 14px;
-    color: lawngreen;
-    padding: 5px 8px;
+    font-size: 8px;
+    color: white;
+    padding: 3px 8px;
     border-radius: 5px;
+    background-color: rgb(255,106,106);
 }
 
 .info-span {
@@ -110,9 +163,19 @@ a:active {
 
 .info-remain {
     color: orangered;
+    font-size: 10px;
 }
 
-.info-user, .info-address {
+.info-money {
+    font-size: 20px;
+    color: red;
+}
+
+.info-address{
+    font-size: 8px;
+}
+
+.info-address {
     margin: 5px 0 10px 0;
 }
 

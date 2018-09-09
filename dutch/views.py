@@ -9,3 +9,7 @@ def index(request):
 
 def detail(request):
     return render(request, 'dutch/detail.html')
+
+
+def search(request):
+    return render(request, 'dutch/index.html')
