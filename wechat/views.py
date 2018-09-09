@@ -44,6 +44,3 @@ def to_binary(value, encoding="utf-8"):
     if isinstance(value, six.text_type):
         return value.encode(encoding)
     return six.binary_type(value)
-
-
-from werobot.contrib.django import make_view
