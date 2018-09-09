@@ -25,7 +25,7 @@ SECRET_KEY = '#q5opo#^_icm@k5_u2)gi7612+evu#9j59jzsv1q$5#b$rwnht'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'youxue.pinsily.site']
 
 
 # Application definition
