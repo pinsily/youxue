@@ -22,5 +22,5 @@ class Course(models.Model):
                                null=True, default='Love English')
 
 
-class Teacher(models):
+class Teacher(models.Model):
     pass
