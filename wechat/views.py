@@ -3,10 +3,11 @@ import hashlib
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def wechat_main(request):
     if request.method == "GET":
         # 接收微信服务器get请求发过来的参数
