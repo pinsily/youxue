@@ -1,37 +1,103 @@
 {% extends 'dutch/base.html' %}
 {% load static %}
 
-{% block nav-left %}返回{% endblock %}
-{% block nav-center %}拼班详情{% endblock %}
+{% block nav-left %}
+    <span class="index-back">
+        <a href="{% url 'dutch:index' %}">
+            <i class="fa fa-chevron-left" style="color: white; font-weight: normal;"></i>
+        </a>
+    </span>
+{% endblock %}
+
+{% block nav-center %}{% endblock %}
+
+
+{% block nav-right %}
+    <form class="navbar-form navbar-right" action="{% url 'dutch:search' %}">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+                <input type="text" class="form-control search-box" placeholder="搜索"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}
 
 {% block content %}
 
     <div>
-
         <div class="block-img">
-            <img src="{% static 'dutch/imgs/2.jpg' %}" alt="" style="width: 100%;">
+            <img src="{% static 'dutch/imgs/detail.jpg' %}" alt="" style="width: 100%;">
         </div>
-        <div class="block-info">
-            <div class="row">
-                <div class="col-6 block-left text-left">
-                    <p class="info-title">课程名称：加州语文课程</p>
-                    <p style="font-size: 14px; color: lightgrey; margin: 0 0 10px;">开课时间：2018-04-30 (星期一)</p>
-                    <p>
-                        <span class="info-span">10-12岁</span>
-                        <span class="info-span">3人班</span>
-                    </p>
 
-                </div>
-                <div class="col-6 block-right text-right">
-                    <p class="info-date">&nbsp;</p>
-                    <p><span class="info-span">仅剩3人</span></p>
-                    <p class="info-user"><span class="fa-user">&nbsp;</span>发起人：朱远鹏</p>
-                </div>
+        <div class="row">
+            <div class="col-3 detail-page detail-active class-detail" onclick="changePage(this, 'class-detail')">
+                <p>课程概述</p>
             </div>
-
+            <div class="col-3 detail-page teacher" onclick="changePage(this, 'teacher')">
+                <p>外教资料</p>
+            </div>
+            <div class="col-3 detail-page class-info" onclick="changePage(this, 'class-info')">
+                <p>上课信息</p>
+            </div>
+            <div class="col-3 detail-page family" onclick="changePage(this, 'family')">
+                <p>家长群</p>
+            </div>
         </div>
 
+        <div id="class-detail">
+            {% include 'dutch/teacher.html' %}
+        </div>
+
+        <div id="teacher" style="display: none;">
+            {% include 'dutch/teacher.html' %}
+        </div>
+
+        <div id="class-info" style="display: none;">
+            {% include 'dutch/teacher.html' %}
+        </div>
+
+        <div id="family" style="display: none;">
+            {% include 'dutch/family.html' %}
+        </div>
+
+
+        <div class="row">
+            <div class="col-6 offset-3">
+                <button class="btn btn-primary add-dutch">加入拼班</button>
+            </div>
+        </div>
     </div>
+
+    <script type="text/javascript">
+
+        var classnames = ["class-detail", "teacher", "class-info", "family"];
+
+        function changePage(elem, classname) {
+            var divs = $(elem).siblings();
+            divs.each(function (i, div) {
+                $(div).removeClass("detail-active");
+            });
+
+
+
+            $(elem).addClass("detail-active");
+
+            for (var i=0; i<classnames.length; i++){
+                var id="#"+classnames[i];
+                if(classnames[i]===classname){
+                    $(id).css("display", "block");
+                }else{
+                    $(id).css("display", "none");
+                }
+            }
+
+            //console.log(divs);
+        }
+
+    </script>
 
 
 {% endblock %}

@@ -12,7 +12,7 @@
     <meta name="description" content="优学拼班"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="Shortcut Icon" href="网站.ico图标路径"/>
+    <link rel="Shortcut Icon" href="{% static 'dutch/imgs/favicon.ico' %}"/>
 
 
     <link type="text/css" rel="stylesheet" href="{% static 'dutch/css/bootstrap.min.css' %}"/> <!-- 4.1.0 -->
@@ -61,7 +61,7 @@
                         {% endblock %}
 
                     </div>
-                    <div class="col-4 text-right nav-title">
+                    <div class="col-4 text-right nav-title" style="padding: 0;">
                         {% block nav-right %}
                             <form class="navbar-form navbar-right" action="{% url 'dutch:search' %}">
                                 <div class="form-group">

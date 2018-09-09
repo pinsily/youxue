@@ -42,6 +42,7 @@ body {
 .navbar {
     padding: 5px;
     background-color: rgb(33, 170, 252);
+
 }
 
 .address-brand{
@@ -107,10 +108,26 @@ a:active {
 
 }
 
+.index-back {
+    color: white;
+    font-size: 23px;
+    text-align: justify;
+    font-weight: normal;
+
+}
+
 
 .block img {
     width: 100%;
     /*border-radius: 50%;*/
+}
+
+
+
+.block-img {
+    width: 100%;
+
+
 }
 
 .info-image{
@@ -177,6 +194,42 @@ a:active {
 
 .info-address {
     margin: 5px 0 10px 0;
+}
+
+/* detail */
+.detail-page {
+    padding: 12px 8px 8px 8px;
+    font-size: 12px;
+    text-align: center;
+
+
+}
+
+.detail-active {
+    border-bottom: 2px solid rgb(255,191,53);
+}
+
+.detail-block {
+    padding: 10px;
+    font-style: normal;
+    box-shadow: 3px 3px 3px #F0FFFF;
+    background-color: #ffffff;
+    border: #cce5ff;
+    margin: 5px 0 0 0;
+}
+
+.add-dutch {
+    width: 100%;
+    background-color: rgb(255,203,109);
+    border: none;
+    padding: 10px 0;
+    border-radius: 10px;
+    position: relative;
+    bottom: 50%;
+}
+
+.fa-star, .fa-star-half-full {
+    color: rgb(255,191,53);
 }
 
 /*
