@@ -8,3 +8,4 @@ dist
 build
 
 dutch/migrations
+wechat/migrations
