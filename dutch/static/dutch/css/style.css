@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     /*background: url("../imgs/2.jpg") no-repeat;*/
     background-size: 100% 100%;
+
 }
 
 body {
@@ -10,9 +11,10 @@ body {
 }
 
 .body-container {
-    max-width: 800px;
-    margin: 0 auto;
+    /*max-width: 800px;
+    margin: 0 auto;*/
     background-color: aliceblue;
+    min-height: 1000px;
     /*border: 1px #9e9e9e solid;*/
 
 }
@@ -29,14 +31,14 @@ body {
 .nav-center {
     padding: 5px;
     font-size: 18px;
-    color: rgb(132,134,130);
+    color: rgb(132, 134, 130);
 
 }
 
 .nav-right {
     padding: 5px;
     font-size: 14px;
-    color: rgb(132,134,130);
+    color: rgb(132, 134, 130);
 }
 
 .navbar {
@@ -45,7 +47,7 @@ body {
 
 }
 
-.address-brand{
+.address-brand {
     background-image: url("../imgs/address.png");
     width: 16px;
     height: 18px;
@@ -61,9 +63,6 @@ body {
     margin-top: 4px;
     border-radius: .25rem;
 }
-
-
-
 
 .slide-box img {
     width: 100%;
@@ -89,15 +88,14 @@ a:visited {
 
 a:hover {
     text-decoration: none;
-    color: rgb(130,132,134);
+    color: rgb(130, 132, 134);
 }
 
 a:active {
     text-decoration: none;
 }
 
-
-.index-title{
+.index-title {
     font-size: 18px;
     font-style: normal;
     margin: 5px 0 10px 5px;
@@ -116,25 +114,21 @@ a:active {
 
 }
 
-
 .block img {
     width: 100%;
     /*border-radius: 50%;*/
 }
 
-
-
 .block-img {
     width: 100%;
 
-
 }
 
-.info-image{
+.info-image {
     border-radius: 4px;
 }
 
-.info-eval{
+.info-eval {
     padding-top: 10px;
 }
 
@@ -153,10 +147,10 @@ a:active {
     color: white;
     padding: 3px 8px;
     border-radius: 5px;
-    background-color: rgb(63,207,196);
+    background-color: rgb(63, 207, 196);
 }
 
-.info-user{
+.info-user {
     font-size: 18px;
     font-weight: bold;
     margin-right: 15px;
@@ -167,7 +161,7 @@ a:active {
     color: white;
     padding: 3px 8px;
     border-radius: 5px;
-    background-color: rgb(255,106,106);
+    background-color: rgb(255, 106, 106);
 }
 
 .info-span {
@@ -188,7 +182,7 @@ a:active {
     color: red;
 }
 
-.info-address{
+.info-address {
     font-size: 8px;
 }
 
@@ -202,11 +196,10 @@ a:active {
     font-size: 12px;
     text-align: center;
 
-
 }
 
 .detail-active {
-    border-bottom: 2px solid rgb(255,191,53);
+    border-bottom: 2px solid rgb(255, 191, 53);
 }
 
 .detail-block {
@@ -218,9 +211,15 @@ a:active {
     margin: 5px 0 0 0;
 }
 
+.detail-block img {
+    width: 100%;
+}
+
+
+
 .add-dutch {
     width: 100%;
-    background-color: rgb(255,203,109);
+    background-color: rgb(255, 203, 109);
     border: none;
     padding: 10px 0;
     border-radius: 10px;
@@ -228,8 +227,56 @@ a:active {
     bottom: 50%;
 }
 
+.detail-title {
+    background-color: rgb(56, 165, 255);
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.course-target {
+    margin: 15px 0;
+}
+
+.course-target li {
+    line-height: 150%;
+    margin: 10px;
+    font-size: 12px;
+}
+
 .fa-star, .fa-star-half-full {
-    color: rgb(255,191,53);
+    color: rgb(255, 191, 53);
+}
+
+.course-setting {
+    /*border: 1px solid rgb(254,96,96);*/
+
+}
+
+.course-setting table {
+    margin: 15px 0 15px 0;
+    border: 1px solid rgb(254,96,96);
+}
+
+.course-setting table .th1 {
+    width: 30%;
+    background-color: rgb(254,96,96);
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    
+}
+
+.course-setting table .th2 {
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    color: #000000;
+
+
 }
 
 /*
@@ -239,3 +286,8 @@ a:active {
     right: initial;
     background-color: #9e9e9e;
 }*/
+
+/*footer*/
+.footer {
+    margin: 30px 0 0 0;
+}

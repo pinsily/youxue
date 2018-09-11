@@ -33,22 +33,19 @@
         </div>
 
         <div class="row">
-            <div class="col-3 detail-page detail-active class-detail" onclick="changePage(this, 'class-detail')">
+            <div class="col-4 detail-page detail-active class-detail" onclick="changePage(this, 'class-detail')">
                 <p>课程概述</p>
             </div>
-            <div class="col-3 detail-page teacher" onclick="changePage(this, 'teacher')">
+            <div class="col-4 detail-page teacher" onclick="changePage(this, 'teacher')">
                 <p>外教资料</p>
             </div>
-            <div class="col-3 detail-page class-info" onclick="changePage(this, 'class-info')">
+            <div class="col-4 detail-page class-info" onclick="changePage(this, 'class-info')">
                 <p>上课信息</p>
-            </div>
-            <div class="col-3 detail-page family" onclick="changePage(this, 'family')">
-                <p>家长群</p>
             </div>
         </div>
 
         <div id="class-detail">
-            {% include 'dutch/teacher.html' %}
+            {% include 'dutch/course.html' %}
         </div>
 
         <div id="teacher" style="display: none;">
@@ -56,12 +53,9 @@
         </div>
 
         <div id="class-info" style="display: none;">
-            {% include 'dutch/teacher.html' %}
+            {% include 'dutch/address.html' %}
         </div>
 
-        <div id="family" style="display: none;">
-            {% include 'dutch/family.html' %}
-        </div>
 
 
         <div class="row">
@@ -73,7 +67,7 @@
 
     <script type="text/javascript">
 
-        var classnames = ["class-detail", "teacher", "class-info", "family"];
+        var classnames = ["class-detail", "teacher", "class-info"];
 
         function changePage(elem, classname) {
             var divs = $(elem).siblings();
