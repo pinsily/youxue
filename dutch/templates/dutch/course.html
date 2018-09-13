@@ -8,10 +8,15 @@
                 <p>课堂目标</p>
             </div>
             <ul class="course-target">
+                {% for target in course.class_target %}
+                    <li><i class="fa fa-crosshairs" style="color: rgb(254,96,96); margin-right: 6px;"></i>{{ target }}</li>
+                {% endfor %}
+
+                {% comment %}
                 <li><i class="fa fa-crosshairs" style="color: rgb(254,96,96); margin-right: 6px;"></i>了解24个主题教学，包括认识自己、认识自己与生活周边和认识自己和社会人文</li>
                 <li><i class="fa fa-crosshairs" style="color: rgb(254,96,96); margin-right: 6px;"></i>掌握300个主要词汇，48个阅读常见词</li>
                 <li><i class="fa fa-crosshairs" style="color: rgb(254,96,96); margin-right: 6px;"></i>掌握24个口语句型，24组生活对话，24组延伸句型</li>
-                <li><i class="fa fa-crosshairs" style="color: rgb(254,96,96); margin-right: 6px;"></i>掌握72首单字和句型韵谣，24首主题歌曲，24个情景故事</li>
+                <li><i class="fa fa-crosshairs" style="color: rgb(254,96,96); margin-right: 6px;"></i>掌握72首单字和句型韵谣，24首主题歌曲，24个情景故事</li>{% endcomment %}
             </ul>
         </div>
         <div class="col-12">
@@ -22,23 +27,23 @@
                 <table class="table">
                     <tr>
                         <th class="th1">班级人数</th>
-                        <th class="th2">5人</th>
+                        <th class="th2">{{ course.scale }} 人</th>
                     </tr>
                     <tr>
                         <th class="th1">课时时长</th>
-                        <th class="th2">45分钟</th>
+                        <th class="th2">{{ course.class_time_one }} 分钟</th>
                     </tr>
                     <tr>
                         <th class="th1">课时周期</th>
-                        <th class="th2">一周两次课，一期两个月</th>
+                        <th class="th2">{{ course.class_period }}</th>
                     </tr>
                     <tr>
                         <th class="th1">课时单价</th>
-                        <th class="th2">250元</th>
+                        <th class="th2">{{ course.lesson_money }} 元</th>
                     </tr>
                     <tr>
                         <th class="th1">课时总价</th>
-                        <th class="th2">4000元</th>
+                        <th class="th2">{{ course.money }} 元</th>
                     </tr>
                 </table>
             </div>

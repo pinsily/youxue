@@ -16,7 +16,7 @@
 
 
     <link type="text/css" rel="stylesheet" href="{% static 'dutch/css/bootstrap.min.css' %}"/> <!-- 4.1.0 -->
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{% static 'dutch/css/init.css' %}"/>
     <link type="text/css" rel="stylesheet" href="{% static 'dutch/css/style.css' %}"/>
 
@@ -98,6 +98,7 @@
 
     </div>
 
+    {% block footer %}
     <div class="footer">
         <nav class="navbar navbar-expand-sm fixed-bottom" style="background-color: #ffffff;">
 
@@ -112,7 +113,7 @@
                     </div>
                     <div class="col-4">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">发起拼班</a>
+                            <a class="nav-link" href="{% url 'dutch:startclass' %}">发起拼班</a>
                         </li>
                     </div>
                     <div class="col-4">
@@ -124,6 +125,8 @@
             </ul>
         </nav>
     </div>
+
+{% endblock %}
 
 </div>
 

@@ -41,11 +41,11 @@
 
     <div class="row">
 
-        <div class="col-12 text-left index-title">
+        {% comment %}<div class="col-12 text-left index-title">
             <h2>热门拼班</h2>
-        </div>
+        </div>{% endcomment %}
 
-        <div class="col-12 index-con">
+        {% comment %}<div class="col-12 index-con">
             <div class="row text-center" style="margin-bottom: 5px;">
                 <div class="col-3">
                     <p>综合排序</p>
@@ -60,11 +60,54 @@
                     <p>最受好评</p>
                 </div>
             </div>
+        </div>{% endcomment %}
+
+        {% for course in courses %}
+        <div class="col-12">
+            <div class="block">
+                <a href="{% url 'dutch:detail' course.id %}">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <img  class="rounded-circle block-img" src="{{ course.teacher.image.url }}" alt="">
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                <span class="info-user">{{ course.teacher.name }}</span>
+                                <span class="info-age">{{ course.age }} 岁</span>
+                                <span class="info-scale">{{ course.scale }} 人</span>
+                            </p>
+                            <p class="info-eval">
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star"></i></span>
+                                <span><i class="fa fa-star-half-full"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-6" style="padding-right: 5px;">
+                            <img  class="info-image" src="{{ course.image.url }}" alt="">
+                        </div>
+                        <div class="col-6" style="padding-left: 5px;">
+                            <p class="info-title">{{ course.name }}</p>
+                            <p class="info-money"><i class="fa fa-yen"></i>{{ course.lesson_money }}</p>
+                            <p>
+                                <span class="info-address"><i class="fa fa-anchor"> </i>{{ course.address }}</span>
+                                <span class="info-remain">仅剩 {{ course.remain }} 人</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
+
+        {% endfor %}
 
         <div class="col-12">
             <div class="block">
-                <a href="{% url 'dutch:detail' %}">
+                <a href="#">
 
                     <div class="row">
                         <div class="col-3">
@@ -104,7 +147,7 @@
 
         <div class="col-12">
             <div class="block">
-                <a href="{% url 'dutch:detail' %}">
+                <a href="#">
 
                     <div class="row">
                         <div class="col-3">
@@ -144,47 +187,7 @@
 
         <div class="col-12">
             <div class="block">
-                <a href="{% url 'dutch:detail' %}">
-
-                    <div class="row">
-                        <div class="col-3">
-                            <img  class="rounded-circle block-img" src="{% static 'dutch/imgs/user.jpg' %}" alt="">
-                        </div>
-                        <div class="col-9">
-                            <p>
-                                <span class="info-user">Dillon</span>
-                                <span class="info-age">3-5岁</span>
-                                <span class="info-scale">3人班</span>
-                            </p>
-                            <p class="info-eval">
-                                <span><i class="fa fa-star"></i></span>
-                                <span><i class="fa fa-star"></i></span>
-                                <span><i class="fa fa-star"></i></span>
-                                <span><i class="fa fa-star"></i></span>
-                                <span><i class="fa fa-star-half-full"></i></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top: 5px;">
-                        <div class="col-6" style="padding-right: 5px;">
-                            <img  class="info-image" src="{% static 'dutch/imgs/1.png' %}" alt="">
-                        </div>
-                        <div class="col-6" style="padding-left: 5px;">
-                            <p class="info-title">加州语文课程</p>
-                            <p class="info-money"><i class="fa fa-yen"></i>250</p>
-                            <p>
-                                <span class="info-address"><i class="fa fa-anchor"> </i>龙湖区 中泰花园</span>
-                                <span class="info-remain">仅剩3人</span>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-12">
-            <div class="block">
-                <a href="{% url 'dutch:detail' %}">
+                <a href="#">
 
                     <div class="row">
                         <div class="col-3">

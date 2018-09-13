@@ -7,8 +7,8 @@
         </div>
         <div class="col-9">
             <p>
-                <span class="info-user">Dillon</span>
-                <span class="info-age">6年工作经验</span>
+                <span class="info-user">{{ course.teacher.name }}</span>
+                <span class="info-age">{{ course.teacher.experience }} 年工作经验</span>
             </p>
             <p class="info-eval">
                 <span><i class="fa fa-star"></i></span>
@@ -17,7 +17,7 @@
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star-half-full"></i></span>
 
-                <span style="font-size: 12px; margin-left: 15px;">美国</span>
+                <span style="font-size: 12px; margin-left: 15px;">{{ course.teacher.come_from }}</span>
             </p>
         </div>
     </div>
@@ -26,49 +26,13 @@
 <div class="detail-block">
     <div class="row">
         <div class="col-12">
-            <p style="font-size: 17px; font-weight: bold; margin: 0 0 8px 0;">教学经验</p>
+            <p style="font-size: 17px; font-weight: bold; margin: 0 0 8px 0;">教师简介</p>
         </div>
 
         <div class="col-12">
-            <div class="table-responsive">
-                <table class="table text-center">
-                    <thead>
-                    <tr>
-                        <th>开始日期</th>
-                        <th>结束日期</th>
-                        <th>工作单位</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>2015</td>
-                        <td>2017</td>
-                        <td>大嘴英语</td>
-                    </tr>
-                    <tr>
-                        <td>2015</td>
-                        <td>2017</td>
-                        <td>大嘴英语</td>
-                    </tr>
-                    <tr>
-                        <td>2015</td>
-                        <td>2017</td>
-                        <td>大嘴英语</td>
-                    </tr>
-                    <tr>
-                        <td>2015</td>
-                        <td>2017</td>
-                        <td>大嘴英语</td>
-                    </tr>
-                    <tr>
-                        <td>2015</td>
-                        <td>2017</td>
-                        <td>大嘴英语</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            <p style="text-indent: 28px; margin-bottom: 20px;">
+                {{ course.teacher.introduce }}
+            </p>
         </div>
     </div>
 </div>
