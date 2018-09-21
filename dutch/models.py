@@ -1,13 +1,14 @@
 from django.db import models
 
-
 # Create your models here.
 from django.urls import reverse
 
 
 class Course(models.Model):
     id = models.AutoField(primary_key=True, verbose_name="id")
-    created_time = models.DateTimeField(verbose_name=u'创建时间')
+    created_time = models.DateTimeField(verbose_name=u'创建时间', auto_now=True)
+    teacher_name = models.CharField(max_length=255, verbose_name="教师名称", blank=True,
+                                    null=True)
     name = models.CharField(max_length=255, verbose_name="课程名称", blank=True,
                             null=True, default='Love English')
     scale = models.CharField(max_length=20, verbose_name="课程规模", blank=True,
@@ -22,7 +23,7 @@ class Course(models.Model):
                              null=True, default="4000")
     remain = models.CharField(max_length=10, verbose_name="剩余人数", blank=True,
                               null=True, default="2")
-    teacher = models.ForeignKey('Teacher', verbose_name="课程教师", on_delete=models.DO_NOTHING)
+    teacher = models.ForeignKey('Teacher', verbose_name="课程教师", on_delete=models.DO_NOTHING, null=True)
     address = models.CharField(max_length=255, verbose_name="地址")
     people_num = models.CharField(max_length=10, verbose_name="人数", default="2")
     class_target = models.TextField(verbose_name="课程目标")
@@ -57,3 +58,18 @@ class Teacher(models.Model):
 
     class Meta:
         db_table = "teeacher"
+
+
+class ClassUser(models.Model):
+    name = models.CharField(max_length=255, verbose_name="家长姓名")
+    telphone = models.CharField(max_length=11, verbose_name="电话")
+    qq = models.CharField(max_length=30, verbose_name="QQ")
+    wechat = models.CharField(max_length=20, verbose_name="wechat")
+    sponsor = models.CharField(max_length=1, verbose_name="是否为发起人")
+    course = models.ForeignKey(Course, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "Classuser"

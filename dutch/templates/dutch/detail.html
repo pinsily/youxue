@@ -57,13 +57,62 @@
         </div>
 
 
-
         <div class="row">
             <div class="col-6 offset-3">
-                <button class="btn btn-primary add-dutch">加入拼班</button>
+                <button class="btn btn-primary add-dutch" type="button" data-toggle="modal" data-target="#myModal">
+                    加入拼班
+                </button>
             </div>
         </div>
     </div>
+
+    <div class="row" class="seft-modal">
+        <div class="col-12">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- 模态框头部 -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">联系方式</h4>
+                        </div>
+
+                        <!-- 模态框主体 -->
+                        <div class="modal-body" >
+                            <div class="form-group row">
+                                <label for="username" class="col-4 text-center">课程名称:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="username" placeholder="Love English">
+                            </div>
+                            <div class="form-group row">
+                                <label for="userphone" class="col-4 text-center">上课地点:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userphone"
+                                       placeholder="汕头市中山路泰和花园23号">
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="userqq" class="col-4 text-center">开课时间:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userqq" placeholder="2018-12-12">
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="userwechat" class="col-4 text-center">拼班人数:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userwechat" placeholder="5">
+                            </div>
+                        </div>
+
+                        <!-- 模态框底部 -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    onclick="joinClass({{ course.id }})">加入
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script type="text/javascript">
 
@@ -76,19 +125,43 @@
             });
 
 
-
             $(elem).addClass("detail-active");
 
-            for (var i=0; i<classnames.length; i++){
-                var id="#"+classnames[i];
-                if(classnames[i]===classname){
+            for (var i = 0; i < classnames.length; i++) {
+                var id = "#" + classnames[i];
+                if (classnames[i] === classname) {
                     $(id).css("display", "block");
-                }else{
+                } else {
                     $(id).css("display", "none");
                 }
             }
+        }
 
-            //console.log(divs);
+        function joinClass(id) {
+            var url = "{% url 'dutch:joinclass'%}";
+            var data = {
+                idname: $("#username").val(),
+                userphone: $("#userphone").val(),
+                userqq: $("#userqq").val(),
+                userwechat: $("#userwechat").val(),
+                id: id
+            };
+
+            //console.log(data);
+            //console.log(url);
+
+            $.ajax({
+
+                url: url,
+                data: data,
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    //console.log(data);
+                    alert(data['ret_message']);
+                },
+
+            });
         }
 
     </script>

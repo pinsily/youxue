@@ -9,8 +9,9 @@ urlpatterns = [
     path('', views.index, name="index"),
     re_path(r'^article/(?P<course_id>\d+)$',
             views.CourseDetailView.as_view(), name='detail'),
+    path('joinclass/', views.join_class, name='joinclass'),
     # path("detail/", views.detail, name="detail"),
     path("search/", views.search, name="search"),
-    path("startclass", views.startclass, name="startclass")
+    path("startclass/", views.startclass, name="startclass")
 
 ]
