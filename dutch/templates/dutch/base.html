@@ -94,39 +94,65 @@
 
     </div>
 
-    <div style="padding: 20px;">
+    <div style="padding: 40px;">
 
     </div>
 
     {% block footer %}
-    <div class="footer">
-        <nav class="navbar navbar-expand-sm fixed-bottom" style="background-color: #ffffff;">
+        <div class="footer">
+            <nav class="navbar navbar-expand-sm fixed-bottom" style="background-color: #ffffff;">
 
-            <!-- Links -->
-            <ul class="navbar-nav text-center" style="width: 100%;">
-                <div class="row">
-                    <div class="col-4">
+                <!-- Links -->
+                <ul class="navbar-nav text-center" style="width: 100%;">
+                    <div class="row">
+                        <div class="col-4">
+                            {% if page == 'index' %}
+                                <li class="nav-item" style="padding-top: 5px;">
+                                    <span><i class="fa fa-home"
+                                             style="font-size: 18px; color: rgb(255, 174, 0);"></i></span>
+                                    <a class="nav-link" style="padding: 0;" href="{% url 'dutch:index' %}">学堂在线</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item" style="padding-top: 5px;">
+                                    <span><i class="fa fa-home" style="font-size: 18px;"></i></span>
+                                    <a class="nav-link" style="padding: 0;" href="{% url 'dutch:index' %}">学堂在线</a>
+                                </li>
+                            {% endif %}
+                        </div>
+                        <div class="col-4">
+                            {% if page == 'start' %}
+                                <li class="nav-item" style="padding-top: 5px;">
+                                    <span><i class="fa fa-paperclip"
+                                             style="font-size: 18px; color: rgb(255, 174, 0);"></i></span>
+                                    <a class="nav-link" style="padding: 0;" href="{% url 'dutch:startclass' %}">发起拼班</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item" style="padding-top: 5px;">
+                                    <span><i class="fa fa-paperclip" style="font-size: 18px;"></i></span>
+                                    <a class="nav-link" style="padding: 0;" href="{% url 'dutch:startclass' %}">发起拼班</a>
+                                </li>
+                            {% endif %}
+                        </div>
+                        <div class="col-4">
+                            {% if page == 'user' %}
+                                <li class="nav-item" style="padding-top: 5px;">
+                                    <span><i class="fa fa-user"
+                                             style="font-size: 18px; color: rgb(255, 174, 0);"></i></span>
+                                    <a class="nav-link" style="padding: 0;" href="{% url 'dutch:userpage' %}">我的信息</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item" style="padding-top: 5px;">
+                                    <span><i class="fa fa-user" style="font-size: 18px;"></i></span>
+                                    <a class="nav-link" style="padding: 0;" href="{% url 'dutch:userpage' %}">我的信息</a>
+                                </li>
+                            {% endif %}
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </div>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">学堂在线</a>
-                        </li>
-                    </div>
-                    <div class="col-4">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'dutch:startclass' %}">发起拼班</a>
-                        </li>
-                    </div>
-                    <div class="col-4">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">我的信息</a>
-                        </li>
-                    </div>
-                </div>
-            </ul>
-        </nav>
-    </div>
-
-{% endblock %}
+    {% endblock %}
 
 </div>
 

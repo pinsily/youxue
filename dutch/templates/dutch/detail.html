@@ -59,9 +59,10 @@
 
         <div class="row">
             <div class="col-6 offset-3">
-                <button class="btn btn-primary add-dutch" type="button" data-toggle="modal" data-target="#myModal">
+                <button class="btn btn-primary add-dutch" type="button" data-toggle="modal" data-target="#myModal" aria-hidden="true" data-backdrop="static">
                     加入拼班
                 </button>
+
             </div>
         </div>
     </div>
@@ -69,7 +70,7 @@
     <div class="row" class="seft-modal">
         <div class="col-12">
             <div class="modal fade" id="myModal">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
 
                         <!-- 模态框头部 -->
@@ -78,25 +79,28 @@
                         </div>
 
                         <!-- 模态框主体 -->
-                        <div class="modal-body" >
+                        <div class="modal-body">
                             <div class="form-group row">
-                                <label for="username" class="col-4 text-center">课程名称:</label>
-                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="username" placeholder="Love English">
+                                <label for="username" class="col-4 text-center">姓名:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="username"
+                                       placeholder="Love English">
                             </div>
                             <div class="form-group row">
-                                <label for="userphone" class="col-4 text-center">上课地点:</label>
+                                <label for="userphone" class="col-4 text-center">电话:</label>
                                 <input type="text" class="form-control col-8" style="font-size: 14px;" id="userphone"
                                        placeholder="汕头市中山路泰和花园23号">
                             </div>
 
                             <div class="form-group row">
-                                <label for="userqq" class="col-4 text-center">开课时间:</label>
-                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userqq" placeholder="2018-12-12">
+                                <label for="userqq" class="col-4 text-center">QQ:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userqq"
+                                       placeholder="2018-12-12">
                             </div>
 
                             <div class="form-group row">
-                                <label for="userwechat" class="col-4 text-center">拼班人数:</label>
-                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userwechat" placeholder="5">
+                                <label for="userwechat" class="col-4 text-center">微信:</label>
+                                <input type="text" class="form-control col-8" style="font-size: 14px;" id="userwechat"
+                                       placeholder="5">
                             </div>
                         </div>
 
@@ -105,8 +109,8 @@
                             <button type="button" class="btn btn-primary" data-dismiss="modal"
                                     onclick="joinClass({{ course.id }})">加入
                             </button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -115,6 +119,8 @@
 
 
     <script type="text/javascript">
+
+        //$("#myModal").modal({backdrop: 'static', keyboard: false});
 
         var classnames = ["class-detail", "teacher", "class-info"];
 
@@ -139,11 +145,34 @@
 
         function joinClass(id) {
             var url = "{% url 'dutch:joinclass'%}";
+
+            var idname = $("#username").val();
+            var userphone = $("#userphone").val();
+            var userqq = $("#userqq").val();
+            var userwechat = $("#userwechat").val();
+
+            if(idname===""){
+                alert("名字不能为空!");
+                return;
+            }
+
+            if (!(/^1[34578]\d{9}$/.test(userphone))) {
+                alert("手机号码有误，请检查!");
+                return;
+            }
+
+            if(!(/^[1-9]\d{4,9}$/.test(userqq)) && userqq!=="")(
+                alert("QQ号码有误， 请检查!")
+            )
+
+
+
+
             var data = {
-                idname: $("#username").val(),
-                userphone: $("#userphone").val(),
-                userqq: $("#userqq").val(),
-                userwechat: $("#userwechat").val(),
+                idname: idname,
+                userphone: userphone,
+                userqq: userqq,
+                userwechat: userwechat,
                 id: id
             };
 

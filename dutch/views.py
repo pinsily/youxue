@@ -1,6 +1,5 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.utils.datastructures import MultiValueDictKeyError
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import DetailView
 
@@ -14,6 +13,7 @@ def index(request):
 
     data = {
         'courses': courses,
+        'page': 'index',
     }
 
     return render(request, 'dutch/index.html', data)
@@ -46,6 +46,7 @@ class CourseDetailView(DetailView):
 
     # 为模板添加分类和标签上下文变量
     def get_context_data(self, **kwargs):
+        kwargs["page"] = "detail"
         return super(CourseDetailView, self).get_context_data(**kwargs)
 
 
@@ -86,8 +87,7 @@ def startclass(request):
                                         sponsor="1")
         return JsonResponse(ret_data)
 
-
-    return render(request, 'dutch/startClass.html')
+    return render(request, 'dutch/startClass.html', {"page": "start"})
 
 
 @csrf_exempt
@@ -120,4 +120,6 @@ def join_class(request):
         ret_data = {'ret_code': '300', 'ret_message': "加入失败!"}
         return JsonResponse(ret_data)
 
-    return render(request, 'dutch/index.html')
+
+def userpage(request):
+    return render(request, 'dutch/userpage.html', {"page": "user"})
