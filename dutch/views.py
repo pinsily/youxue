@@ -123,3 +123,22 @@ def join_class(request):
 
 def userpage(request):
     return render(request, 'dutch/userpage.html', {"page": "user"})
+
+
+# 课程列表
+def dutch(request):
+    dutchs = models.Dutch.objects.all()
+    kwargs = {
+        'page': "dutch",
+        'dutchs': dutchs
+    }
+    return render(request, 'dutch/dutch.html', kwargs)
+
+
+def teacher(request):
+    teachers = models.Teacher.objects.all()
+    kwargs = {
+        'page': 'teacher',
+        'teachers': teachers
+    }
+    return render(request, 'dutch/teachers.html', kwargs)

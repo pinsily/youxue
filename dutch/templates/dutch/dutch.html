@@ -1,0 +1,146 @@
+{% extends 'dutch/base.html' %}
+{% load static %}
+
+{% block nav-left %}
+    <span class="index-back">
+        <a href="{% url 'dutch:index' %}">
+            <i class="fa fa-chevron-left" style="color: white; font-weight: normal;"></i>
+        </a>
+    </span>
+{% endblock %}
+
+{% block nav-center %}{% endblock %}
+
+
+{% block nav-right %}
+    <form class="navbar-form navbar-right" action="{% url 'dutch:search' %}">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+                <input type="text" class="form-control search-box" placeholder="搜索"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block content %}
+
+    <div>
+        <div class="block-img">
+            <img src="{% static 'dutch/imgs/detail.jpg' %}" alt="" style="width: 100%;">
+        </div>
+
+        <div class="row">
+            <div class="col-4 detail-page detail-active class-detail" onclick="changePage(this, 'class-detail')">
+                <p>台湾爱英</p>
+            </div>
+            <div class="col-4 detail-page teacher" onclick="changePage(this, 'teacher')">
+                <p>香港朗文</p>
+            </div>
+            <div class="col-4 detail-page class-info" onclick="changePage(this, 'class-info')">
+                <p>剑桥英语</p>
+            </div>
+        </div>
+
+        <div id="class-detail">
+            <div class="row">
+                {% for dutch in dutchs %}
+                    {% if dutch.dutch_class.name == "台湾爱英" %}
+                        <div class="dutch">
+                            <a href="{{ dutch.detail_url }}">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 dutch-img">
+                                            <img src="{{ dutch.image.url }}" alt="" style="width: 100%;">
+                                        </div>
+                                        <div class="col-8 dutch-body">
+                                            <p class="dutch-title">{{ dutch.name }}</p>
+                                            <p class="dutch-desc">{{ dutch.detail }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="teacher" style="display: none;">
+            <div class="row">
+                {% for dutch in dutchs %}
+                    {% if dutch.dutch_class.name == "香港朗文" %}
+                        <div class="dutch">
+                            <a href="{{ dutch.detail_url }}">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 dutch-img">
+                                            <img src="{{ dutch.image.url }}" alt="" style="width: 100%;">
+                                        </div>
+                                        <div class="col-8 dutch-body">
+                                            <p class="dutch-title">{{ dutch.name }}</p>
+                                            <p class="dutch-desc">{{ dutch.detail }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="class-info" style="display: none;">
+            <div class="row">
+                {% for dutch in dutchs %}
+                    {% if dutch.dutch_class.name == "剑桥英语" %}
+                        <div class="dutch">
+                            <a href="{{ dutch.detail_url }}">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 dutch-img">
+                                            <img src="{{ dutch.image.url }}" alt="" style="width: 100%;">
+                                        </div>
+                                        <div class="col-8 dutch-body">
+                                            <p class="dutch-title">{{ dutch.name }}</p>
+                                            <p class="dutch-desc">{{ dutch.detail }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        var classnames = ["class-detail", "teacher", "class-info"];
+
+        function changePage(elem, classname) {
+            var divs = $(elem).siblings();
+            divs.each(function (i, div) {
+                $(div).removeClass("detail-active");
+            });
+
+
+            $(elem).addClass("detail-active");
+
+            for (var i = 0; i < classnames.length; i++) {
+                var id = "#" + classnames[i];
+                if (classnames[i] === classname) {
+                    $(id).css("display", "block");
+                } else {
+                    $(id).css("display", "none");
+                }
+            }
+        }
+
+    </script>
+
+{% endblock %}

@@ -73,3 +73,29 @@ class ClassUser(models.Model):
 
     class Meta:
         db_table = "Classuser"
+
+
+class DutchClass(models.Model):
+    name = models.CharField(max_length=255, verbose_name="课程分类名称")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "dutchclass"
+        ordering = ["name"]
+
+
+class Dutch(models.Model):
+    name = models.CharField(max_length=255, verbose_name="课程名称")
+    detail = models.TextField(verbose_name="课程简介", help_text="取前50字")
+    detail_url = models.URLField(verbose_name="推文链接", help_text="跳转到推文链接")
+    image = models.FileField(null=True, blank=True, upload_to='dutch/', default="dutch/default.png", help_text="图片")
+    dutch_class = models.ForeignKey(DutchClass, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "dutch"
+        ordering = ["name"]

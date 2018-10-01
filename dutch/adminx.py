@@ -23,6 +23,16 @@ class ClassUserAdmin(object):
     pass
 
 
+class DutchAdmin(object):
+    pass
+
+
+class DutchClassAdmin(object):
+    pass
+
+
 xadmin.site.register(models.Course, CourseAdmin)
 xadmin.site.register(models.Teacher, TeacherAdmin)
 xadmin.site.register(models.ClassUser, ClassUserAdmin)
+xadmin.site.register(models.DutchClass, DutchClassAdmin)
+xadmin.site.register(models.Dutch, DutchAdmin)

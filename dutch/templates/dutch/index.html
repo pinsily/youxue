@@ -41,27 +41,6 @@
 
     <div class="row">
 
-        {% comment %}<div class="col-12 text-left index-title">
-            <h2>热门拼班</h2>
-        </div>{% endcomment %}
-
-        {% comment %}<div class="col-12 index-con">
-            <div class="row text-center" style="margin-bottom: 5px;">
-                <div class="col-3">
-                    <p>综合排序</p>
-                </div>
-                <div class="col-3">
-                    <p>距离最近</p>
-                </div>
-                <div class="col-3">
-                    <p>价格优先</p>
-                </div>
-                <div class="col-3">
-                    <p>最受好评</p>
-                </div>
-            </div>
-        </div>{% endcomment %}
-
         {% for course in courses %}
         <div class="col-12">
             <div class="block">
@@ -108,6 +87,7 @@
         </div>
 
         {% endfor %}
+{% comment %}
 
         <div class="col-12">
             <div class="block">
@@ -228,6 +208,7 @@
                 </a>
             </div>
         </div>
+{% endcomment %}
 
     </div>
 

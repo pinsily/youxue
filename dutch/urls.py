@@ -13,6 +13,8 @@ urlpatterns = [
     # path("detail/", views.detail, name="detail"),
     path("search/", views.search, name="search"),
     path("startclass/", views.startclass, name="startclass"),
-    path("userpage/", views.userpage, name="userpage")
+    path("userpage/", views.userpage, name="userpage"),
+    path('dutch/', views.dutch, name="dutch"),
+    path('teacher/', views.teacher, name="teacher"),
 
 ]
