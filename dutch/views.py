@@ -142,3 +142,23 @@ def teacher(request):
         'teachers': teachers
     }
     return render(request, 'dutch/teachers.html', kwargs)
+
+
+class TeacherDetailView(DetailView):
+    model = models.Teacher
+    template_name = 'dutch/teacher_detail.html'
+    context_object_name = 'teacher'
+
+    # 接受来自 url 中的参数
+    pk_url_kwarg = 'teacher_id'
+
+    # 从数据库中获取相应ID文章、
+    def get_object(self, queryset=None):
+        obj = super(TeacherDetailView, self).get_object()
+        return obj
+
+    # 为模板添加分类和标签上下文变量
+    def get_context_data(self, **kwargs):
+        kwargs["page"] = "teacher_detail"
+        return super(TeacherDetailView, self).get_context_data(**kwargs)
+

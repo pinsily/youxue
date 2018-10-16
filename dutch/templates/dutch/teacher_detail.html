@@ -1,0 +1,94 @@
+{% extends 'dutch/base.html' %}
+{% load static %}
+
+{% block nav-left %}
+    <span class="index-back">
+        <a href="{% url 'dutch:teacher' %}">
+            <i class="fa fa-chevron-left" style="color: white; font-weight: normal;"></i>
+        </a>
+    </span>
+{% endblock %}
+
+{% block nav-center %}{% endblock %}
+
+
+{% block nav-right %}
+    <form class="navbar-form navbar-right" action="{% url 'dutch:search' %}">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </div>
+                <input type="text" class="form-control search-box" placeholder="搜索"/>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block content %}
+
+    <div class="block">
+        <div class="row">
+            <div class="col-3">
+                <img class="rounded-circle block-img" src="{{ teacher.image.url }}" alt="">
+            </div>
+            <div class="col-9">
+                <p>
+                    <span class="info-user">{{ teacher.name }}</span>
+                    <span class="info-age">{{ teacher.come_from }}</span>
+                </p>
+                <p class="info-eval">
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star"></i></span>
+                    <span><i class="fa fa-star-half-full"></i></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-block">
+        <div class="row">
+            <div class="col-12">
+                <p style="font-size: 17px; font-weight: bold; margin: 0 0 8px 0;">教师图片</p>
+            </div>
+
+            <div class="col-12">
+                <p style="width: 100%">
+                    <img src="{{ teacher.image.url }}" alt="" style="width: 100%;">
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="detail-block">
+        <div class="row">
+            <div class="col-12">
+                <p style="font-size: 17px; font-weight: bold; margin: 0 0 8px 0;">教师简介</p>
+            </div>
+
+            <div class="col-12">
+                <p style="text-indent: 28px; margin-bottom: 20px;">
+                    {{ teacher.introduce }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-block">
+        <div class="row">
+            <div class="col-12">
+                <p style="font-size: 17px; font-weight: bold; margin: 0 0 8px 0;">工作经验</p>
+            </div>
+
+            <div class="col-12">
+                <p style="text-indent: 28px; margin-bottom: 20px;">
+                    {{ teacher.experience }} 年
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

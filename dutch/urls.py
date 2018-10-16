@@ -16,5 +16,7 @@ urlpatterns = [
     path("userpage/", views.userpage, name="userpage"),
     path('dutch/', views.dutch, name="dutch"),
     path('teacher/', views.teacher, name="teacher"),
+    re_path(r'^teacher/(?P<teacher_id>\d+)$',
+            views.TeacherDetailView.as_view(), name='teacher_detail'),
 
 ]
